@@ -6,7 +6,7 @@ import Nav from "./Nav";
 
 export default function Header() {
   return (
-    <header className="w-full bg-background text-foreground flex items-center px-6 py-4 shadow-md relative">
+    <header className="w-full bg-foreground text-background flex items-center px-6 py-4 shadow-md relative">
       {/* Navigation à gauche */}
       <div className="flex-1">
         <Nav />
