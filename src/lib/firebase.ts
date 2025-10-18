@@ -1,7 +1,8 @@
 // src/lib/firebase.ts
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
+// Configuration Firebase depuis les variables d'environnement
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -11,5 +12,8 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-const app = initializeApp(firebaseConfig);
+// Initialiser Firebase une seule fois
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
+
+// Authentification Firebase
 export const auth = getAuth(app);
