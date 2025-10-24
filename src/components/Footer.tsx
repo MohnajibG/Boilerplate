@@ -6,14 +6,6 @@ export default function Footer() {
         <p className="text-sm">
           &copy; {new Date().getFullYear()} Your Company. All rights reserved.
         </p>
-
-        <nav className="mt-4 md:mt-0">
-          <ul className="flex gap-6">
-            <li className="cursor-default">Home</li>
-            <li className="cursor-default">About</li>
-            <li className="cursor-default">Contact</li>
-          </ul>
-        </nav>
       </div>
     </footer>
   );
