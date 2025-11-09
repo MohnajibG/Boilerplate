@@ -40,11 +40,15 @@ export default function Nav() {
           return (
             <motion.div
               key={item.name}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className={`cursor-pointer transition relative ${
-                isActive ? "font-bold " : ""
-              }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 200, damping: 15 }}
+              className={`cursor-pointer relative px-3 py-2 rounded-xs transition-transform duration-500 ease-out
+    ${
+      isActive
+        ? "text-white bg-gradient-to-r from-[#058ffe]/40 via-[#2143ce]/40 to-[#dd3ed4]/40 shadow-xs duration-200 ease-out font-bold p-2"
+        : "font-extralight p-2"
+    }`}
             >
               <Link href={item.path}>{item.name}</Link>
             </motion.div>
